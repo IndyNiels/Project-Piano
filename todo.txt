@@ -1,0 +1,5 @@
+
+1. Have all the notes on the stave. OK
+2. Get the HTML elements as objects, push the objects into an array. 
+3. Make selected object return to it's default css value. 
+4. 
