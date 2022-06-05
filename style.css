@@ -100,25 +100,8 @@ justify-content: space-between;
 
 
 .section{
-margin-top:50px;
-
+margin-top:90px;
 }
-
-#wholeStaff {
-display:flex;
-justify-content: center;
-position:relative;
-}
-
-
-
-.stave {
-  width: auto;
-  height: 300.45px;
-  justify-content:center;
-  text-align: center;
-}
-
 
 
 .boton {
@@ -157,17 +140,6 @@ width:  100%;
 }
 
 
-.note {
-  position: absolute;
-  width:auto;
-  height:8.441%; 
-}
-
-.noteOut {
-  position: absolute;
-  width:170px;
-  height:auto;
-}
 
 .boton-midi {
   font-family: Montserrat, sans-serif;
@@ -191,66 +163,231 @@ width:  100%;
 
 
 
+/* From here things related to music: ;  */ 
+
+#wholeStaff {
+display:flex;
+justify-content: center;
+position:relative;
+}
 
 
-#f5 {
+
+.stave {
+  width: auto;
+  height: 300.45px;
+  justify-content:center;
+  text-align: center;
+}
+
+.gclef {
+  position: absolute; 
+  top: -13%;
+  height: 60%; 
+  transform: translate(-360%, 0); 
+     display: none;
+}
+
+
+.bass {
+  position: absolute; 
+  top: -0%;
+  height: 24%; 
+  transform: translate(-573%, 0); 
+  display: none;
+}
+
+
+
+.note {
+  position: absolute;
+  width:auto;
+  height:8.441%; 
+}
+
+.line {
+  position: absolute;
+  width: auto;
+  height: 1.7% ; 
+}
+
+.line3-up {
+  top: -25%;
+   display: block;
+}
+
+.line2-up {
+  top: -16%;
+   display: block;
+}
+
+.line1-up {
+  top: -8%;
+   display: block;
+}
+
+.line1-down {
+  top: 38.5%;
+}
+
+.line2-down {
+  top: 46.5%;
+}
+
+.line3-down {
+  top: 55.5%;
+}
+
+
+
+.noteOut {
+  position: absolute;
+  width:auto;
+  height:50.441%;
+}
+
+
+#pos22 {
+top:-32%;
+  display: none;
+}
+
+#pos21 {
+top:-28%;
+  display: none;
+}
+
+
+#pos20 {
+top:-24%;
+   display: none;
+}
+
+#pos19 {
+top:-19%;
+  display: none;
+}
+
+#pos18 {
+top:-15%;
+display: none;
+}
+
+
+#pos17{
+top:-11%;
+   display: none;
+}
+
+
+#pos16 {
+top:-7%;
+ display: none;
+}
+
+
+#pos15 {
 top:-3%;
  display: none;
   
 }
 
-#e5 {
+#pos14 {
 top:1%;
   display:none;
 }
 
-#d5 {
+#pos13 {
 top:4.6%;
   display:none;
 }
 
-#c5 {
+#pos12 {
 top:8.5%;
   display:none;
 }
 
-#b4 {
+#pos11 {
 top:12%;
    display:none;
 }
 
-#a4 {
+#pos10 {
 top:16%;
   display:none;
 }
 
-#g4 {
+#pos9 {
 top:19.5%;
    display:none;
 }
 
-#f4 {
+#pos8 {
 top:23.5%;
   display:none;
 }
 
-#e4 {
+#pos7 {
 top:27.5%;
   display:none;
 }
 
-#d4 {
-top:31.5%;
+#pos6 {
+top:31%;
   display:none;
 }
 
-#c4 {
+#pos5 {
 top:35.5%;
-  display:none;
-  
+    display:none;
 }
 
-#f3 {
-top:20%;
+#pos4 {
+top:39.5%;
+    display:none;
+}
+
+#pos3 {
+top:43.5%;
   display:none;
 }
+
+#pos2 {
+top:48%;
+  display:none;
+}
+
+#pos1 {
+top:52.5%;
+  display:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
