@@ -1,12 +1,14 @@
 //Here I declare my notes as variables
 class Note {
-    constructor(note, elem, clef, distance, timer, midinote) {
+    constructor(note, elem, clef, distance, timer,position, midinote) {
         this.note = note;
         this.elem = elem;
         this.clef = clef;
         this.distance = distance;
         this.timer = timer;
+        this.position = position; 
         this.midinote = midinote;
+       
     }
 }
 
@@ -61,40 +63,101 @@ const a1 = new Note('a1', document.getElementById("pos1"), 'bass')
 
 
 let notas = [f6, e6, d6, c6, b5, a5, g5, f5, e5, d5, c5, b4, a4, g4, f4, e4, d4, c4, b3, a3, g3, f3, a4b, g4b, e4b, b3b, a3b, g3b,
-    f3b, e3, d3, c3, b2, a2, g2, f2, e2, d2, c2, b1, a1
-];
+    f3b, e3, d3, c3, b2, a2, g2, f2, e2, d2, c2, b1, a1 ];
+
+//Adding to timer 100 seconds to all notes
+notas.map(x => x.timer = 100)
+
+//Adding position to notes from left to right of the keyboard starting from 0 
+notas.reverse()
+for (let i = 0; i<notas.length; i++) {
+  notas[i].position = i
+}
+
+//Sort for initializing game. We start from c4 (23 position)
+notas.sort((a,b) => (Math.abs(a.position-29)> Math.abs(b.position -29))? 1 : -1)
+
+//console.table(notas)
+
+
+
+
+//Declaring the visible note.
+
 let notaVisible = []
 
 //Here I declare and get my buttons. 
-let timebuton = document.querySelector('#timeStamp')
-let boton = document.querySelector('#botonTest');
+
+let boton = document.querySelector('#start-button');
 
 // Declaring my clefs. 
 
 let treble = document.querySelector('.gclef');
 let bass = document.querySelector('.bass');
 
-//Declaring my lines 
+//Declaring my lines .
 
 let line1up = document.querySelector('.line1-up');
 let line2up = document.querySelector('.line2-up');
 let line3up = document.querySelector('.line3-up');
 
 
-//My functions
+//My functions ==================================================================
+
+//Declaring my animation confeti 
+
+   const svgContainer = document.getElementById('svg');
+        const animItem = bodymovin.loadAnimation({
+            wrapper: svgContainer,
+            animType: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'https://assets2.lottiefiles.com/packages/lf20_u4yrau.json'
+        });
+
+       
+                                        
+         let confeti = function (){
+            svgContainer.classList.remove('hide');
+            animItem.goToAndPlay(0,true);
+        }
+
+     boton.addEventListener('click',confeti) 
+
+        animItem.addEventListener('complete', () => {
+            svgContainer.classList.add('hide');
+            
+        })  
+
+
+//Declaring my sorting algorithm
+
+let algo = function () {
+notas.sort((a, b) => (a.timer > b.timer) ? 1 : (a.timer === b.timer) ? ((Math.abs(a.position-23) > Math.abs(b.position-23)) ? 1 : -1) : -1 ); 
+
+  return notas
+}
+
+
+
+//Declaring my drawing function 
 let dibuja = function() { //Function to hide and show notes
 
-    let randomElement = Math.floor(Math.random() * notas.length); //My current algorithm
+    algo();
+   let randomElement = Math.floor(Math.random() * 10); //My current algorithm
 
-    if (notaVisible.length > 0) { //If there is an element in array. 
-        notaVisible[0].elem.style.display = "none" //Hide the previous DOM element. 
-        notaVisible.shift(); //Erase the first object from array. 
+     //If there is an element in array, hide previous DOM element and erase first object array.
+    if (notaVisible.length > 0) { 
+        notaVisible[0].elem.style.display = "none" 
+        notaVisible.shift(); 
     }
-    notaVisible.push(notas[randomElement]); //Introduce new element into array. 
-    notaVisible[notaVisible.length - 1].elem.style.display = "block"; //Show the element in DOM
-    activeNote = notaVisible[0]
-    //including lines if necesary 
 
+    //Introduce new note objet in array and display his DOM element.
+    notaVisible.push(notas[randomElement]); 
+    notaVisible[notaVisible.length - 1].elem.style.display = "block"; 
+    activeNote = notaVisible[0]
+    
+    //Display corresponding clef
     switch (activeNote.clef) {
         case "treble":
             treble.style.display = "block";
@@ -109,15 +172,10 @@ let dibuja = function() { //Function to hide and show notes
             bass.style.display = "none";
 
     }
-
+console.table(notas)
     return activeNote
 };
 
-
-let algorithm = function() {
-
-
-}
 
 
 //Function to check wether the right button has been clicked. 
@@ -128,7 +186,9 @@ let checkTest = function(event) {
     if (activeNote.note.includes(butonToString)) {
         let pushTime = storeTime()
         activeNote.timer = pushTime
+        if(activeNote.timer < 2 ) {activeNote.timer +=100} 
         dibuja();
+       confeti();
     }
 }
 
@@ -147,27 +207,11 @@ let storeTime = function() {
     time.push(new Date().getTime())
 }
 
-function compare(a, b) {
-    if (a.timer < b.timer) {
-        return -1;
-    }
-    if (a.timer > b.timer) {
-        return 1;
-    }
-    return 0;
-}
-
-g5.timer = 30
-g4.timer = 30
-
-
-const newarray = notas.sort(compare);
 
 
 
-const map1 = notas.map(({note})=> note); 
+   
 
-console.log(map1)
 
 
 
@@ -180,4 +224,5 @@ g.addEventListener('click', checkTest);
 a.addEventListener('click', checkTest);
 b.addEventListener('click', checkTest);
 boton.addEventListener('click', dibuja);
-timebuton.addEventListener('click', storeTime)
+
+

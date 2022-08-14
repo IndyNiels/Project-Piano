@@ -364,7 +364,20 @@ top:52.5%;
 
 
 
+/*________Confetti animation */
 
+.svg {
+    width: 400px;
+    position: absolute;
+    pointer-events: none;
+  top: 5%;
+}
+
+
+
+.hide {
+    display: none;
+}
 
 
 

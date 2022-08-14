@@ -2,6 +2,11 @@
 <html>
    <head>
       <link rel="stylesheet" href="style.css">
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.4/lottie.min.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+
+     
    </head>
    <body>
       <nav>
@@ -24,7 +29,7 @@
    <div class ="section">
       <div id="wholeStaff"> 
          <img class="stave" src="images/GrandStaff.svg"></img>
-        
+        <div class="svg hide" id="svg"></div>
         
           <img class="gclef" src="images/G-clef.svg"></img>
            <img class="bass" src="images/FClef.svg"></img>
@@ -68,27 +73,30 @@
       </div> <!-- End of staff image--->
    </div>  <!-- End of section--->
 
+   
   
      
    <div class ="section">  
         <div class = "container container--content"> 
-      <button class="boton" id="c">Do</button>
-      <button class="boton" id="d">Re</button>
-      <button class="boton" id="e">Mi</button>
-      <button class="boton" id="f">Fa</button>
-      <button class="boton" id="g">Sol</button>
-      <button class="boton" id="a">La</button>
-      <button class="boton" id="b">Si</button>
+      <button class="boton" id="c">C</button>
+      <button class="boton" id="d">D </button>
+      <button class="boton" id="e">E</button>
+      <button class="boton" id="f">F</button>
+      <button class="boton" id="g">G</button>
+      <button class="boton" id="a">A</button>
+      <button class="boton" id="b">B</button>
         </div>
    </div>
 
      <div class = "section">
     <div class = "container">
-      <button class = "boton " id="timeStamp">TimeStamp me!</button>
-      <button class = "boton boton--pink" id="botonTest">Start</button>
+  
+      <button class = "boton boton--pink" id="start-button">Start</button>
     </div>
   </div>
 
      
    <script type="text/javascript" src="script_test.js"></script>
+
+     
    </body>
