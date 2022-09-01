@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
    <head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+     
       <link rel="stylesheet" href="style.css">
 
      <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.4/lottie.min.js"></script>
@@ -9,6 +13,7 @@
      
    </head>
    <body>
+
       <nav>
         <div class= "container">
            <ul class="nav-list">
@@ -26,22 +31,17 @@
         
       </nav>
    
-   <div class ="section">
-      <div id="wholeStaff"> 
-         <img class="stave" src="images/GrandStaff.svg"></img>
-        <div class="svg hide" id="svg"></div>
-        
-          <img class="gclef" src="images/G-clef.svg"></img>
-           <img class="bass" src="images/FClef.svg"></img>
-
-        
-        <img class = "line line3-up treble" src="images/line_out.svg">
+   <div class ="section staff_section">
+      <div class ="staff_div"> 
+         <div class= "outer_lines">
+           <img class = "line line3-up treble" src="images/line_out.svg">
         <img class = "line line2-up treble" src="images/line_out.svg">
         <img class = "line line1-up treble" src="images/line_out.svg">
-
-
-
-
+        </div> <!-- end of outer_lines -->
+         <img class="staff" src="images/musicstaff.svg"></img>
+          <img class="gclef" src="images/G-clef.svg"></img>
+           <img class="bass" src="images/FClef.svg"></img>
+        
          <img class="note" id="pos22" src="/images/Figure_rythmique_ronde.svg"> 
          <img class="note" id="pos21" src="/images/Figure_rythmique_ronde.svg"> 
          <img class="note" id="pos20" src="/images/Figure_rythmique_ronde.svg"> 
@@ -64,11 +64,12 @@
          <img class="note" id="pos3" src="/images/Figure_rythmique_ronde.svg"> 
          <img class="note" id="pos2" src="/images/Figure_rythmique_ronde.svg"> 
         <img class="note" id="pos1" src="/images/Figure_rythmique_ronde.svg"> 
-       
-        <img class = "line line1-down treble" src="images/line_out.svg">
-        <img class = "line line2-down treble" src="images/line_out.svg">
-        <img class = "line line3-down treble" src="images/line_out.svg">
-         </img>  
+   <div class= "outer_lines">
+           <img class = "line line3-up treble" src="images/line_out.svg">
+        <img class = "line line2-up treble" src="images/line_out.svg">
+        <img class = "line line1-up treble" src="images/line_out.svg">
+        </div> <!-- end of outer_lines -->
+        
         
       </div> <!-- End of staff image--->
    </div>  <!-- End of section--->
@@ -77,26 +78,27 @@
   
      
    <div class ="section">  
-        <div class = "container container--content"> 
-      <button class="boton" id="c">C</button>
-      <button class="boton" id="d">D </button>
-      <button class="boton" id="e">E</button>
-      <button class="boton" id="f">F</button>
-      <button class="boton" id="g">G</button>
-      <button class="boton" id="a">A</button>
-      <button class="boton" id="b">B</button>
+        <div class = "flatNotes container container--content"> 
+      <button class="boton" id="c">Do</button>
+      <button class="boton" id="d">Re</button>
+      <button class="boton" id="e">Mi</button>
+      <button class="boton" id="f">Fa</button>
+      <button class="boton" id="g">Sol</button>
+      <button class="boton" id="a">La</button>
+      <button class="boton" id="b">Si</button>
         </div>
    </div>
 
      <div class = "section">
     <div class = "container">
   
-      <button class = "boton boton--pink" id="start-button">Start</button>
+      <button class = "boton" id="start-button">Start</button>
     </div>
   </div>
 
      
-   <script type="text/javascript" src="script_test.js"></script>
+   <script type="text/javascript" src="script.js"></script>
 
+   
      
    </body>
