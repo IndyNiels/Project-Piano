@@ -94,11 +94,10 @@ margin-top:20px;
 
 .boton {
 width:  100%;
-  height: 110px;
+  height: 90px;
     border: none;
    border-radius: .5rem;
     box-sizing: border-box;
-    font-size: 2rem;
     font-weight: 1100
     line-height: 1.25rem;
      text-decoration: none #D1D5DB solid;
