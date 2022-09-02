@@ -1,104 +1,125 @@
 <!DOCTYPE html>
 <html>
-   <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-     
-      <link rel="stylesheet" href="style.css">
+<head>
 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.4/lottie.min.js"></script>
-<script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width">
 
-     
-   </head>
-   <body>
+   <link rel="stylesheet" href="style.css">
 
-      <nav>
-        <div class= "container">
-           <ul class="nav-list">
-            <li class="nav-item">
-               <img class ="logo "src="images/logo.svg" alt="logo">
-             
-            </li>
-            <li class="nav-item">
-               <button class="boton-midi">
-               <img src="images/midi.svg" alt="MIDI">
-               Connect to MIDI</button>
-            </li>
-         </ul>
-        </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.4/lottie.min.js"></script>
+   <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+
+
+</head>
+
+<body>
+
+   <nav>
+      <div class="container">
+
+         <div id='top'>
+            <div class='logo'>
+               <img class="logo " src="images/logo.svg" alt="logo">
+            </div>
+
+            <div id="menu">
+               <a class='menu-item' href="midi">
+                  <img src="images/midi.svg" alt="midi">
+               </a>
+               <a class='menu-item' href="settings.html">
+                  <img src="images/cog.png" alt="cog">
+               </a>
+            </div>
+         </div>
+
+
+      </div>
+
+   </nav>
+
+   <div class="section staff_section">
+      <div class="staff_div">
+         <div class="outer_lines">
+            <img class="line line3-up treble" src="images/line_out.svg">
+            <img class="line line2-up treble" src="images/line_out.svg">
+            <img class="line line1-up treble" src="images/line_out.svg">
+         </div> <!-- end of outer_lines -->
+          <!-- <img class="staff" src="images/musicstaff.svg"></img> -->
+
         
-      </nav>
-   
-   <div class ="section staff_section">
-      <div class ="staff_div"> 
-         <div class= "outer_lines">
-           <img class = "line line3-up treble" src="images/line_out.svg">
-        <img class = "line line2-up treble" src="images/line_out.svg">
-        <img class = "line line1-up treble" src="images/line_out.svg">
-        </div> <!-- end of outer_lines -->
-         <img class="staff" src="images/musicstaff.svg"></img>
-          <img class="gclef" src="images/G-clef.svg"></img>
-           <img class="bass" src="images/FClef.svg"></img>
-        
-         <img class="note" id="pos22" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos21" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos20" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos19" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos18" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos17" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos16" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos15" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos14" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos13" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos12" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos11" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos10" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos9" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos8" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos7" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos6" src="/images/Figure_rythmique_ronde.svg"> 
-        <img class="note" id="pos5" src="/images/Figure_rythmique_ronde.svg"> 
-        <img class="note" id="pos4" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos3" src="/images/Figure_rythmique_ronde.svg"> 
-         <img class="note" id="pos2" src="/images/Figure_rythmique_ronde.svg"> 
-        <img class="note" id="pos1" src="/images/Figure_rythmique_ronde.svg"> 
-   <div class= "outer_lines">
-           <img class = "line line3-up treble" src="images/line_out.svg">
-        <img class = "line line2-up treble" src="images/line_out.svg">
-        <img class = "line line1-up treble" src="images/line_out.svg">
-        </div> <!-- end of outer_lines -->
-        
-        
+         <img class="gclef" src="images/G-clef.svg"></img>
+         <img class="bass" src="images/FClef.svg"></img>
+
+         <img class="note" id="pos22" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos21" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos20" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos19" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos18" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos17" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos16" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos15" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos14" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos13" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos12" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos11" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos10" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos9" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos8" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos7" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos6" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos5" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos4" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos3" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos2" src="/images/Figure_rythmique_ronde.svg">
+         <img class="note" id="pos1" src="/images/Figure_rythmique_ronde.svg">
+         <div class="outer_lines">
+            <img class="line line3-up treble" src="images/line_out.svg">
+            <img class="line line2-up treble" src="images/line_out.svg">
+            <img class="line line1-up treble" src="images/line_out.svg">
+         </div> <!-- end of outer_lines -->
+
+
       </div> <!-- End of staff image--->
-   </div>  <!-- End of section--->
+   </div> <!-- End of section--->
 
-   
-  
-     
-   <div class ="section">  
-        <div class = "flatNotes container container--content"> 
-      <button class="boton" id="c">Do</button>
-      <button class="boton" id="d">Re</button>
-      <button class="boton" id="e">Mi</button>
-      <button class="boton" id="f">Fa</button>
-      <button class="boton" id="g">Sol</button>
-      <button class="boton" id="a">La</button>
-      <button class="boton" id="b">Si</button>
-        </div>
+
+
+
+   <div class="section">
+      <div class="flatNotes container container--content">
+         <button class="boton" id="c">Do</button>
+         <button class="boton" id="d">Re</button>
+         <button class="boton" id="e">Mi</button>
+         <button class="boton" id="f">Fa</button>
+         <button class="boton" id="g">Sol</button>
+         <button class="boton" id="a">La</button>
+         <button class="boton" id="b">Si</button>
+      </div>
    </div>
 
-     <div class = "section">
-    <div class = "container">
-  
-      <button class = "boton" id="start-button">Start</button>
-    </div>
-  </div>
+   <div class="section">
+      <div class="container">
 
-     
+         <button class="boton" id="start-button">Start</button>
+      </div>
+   </div>
+
+   <div class="container">
+      <div class="note-name">
+         <h1>Note names</h1>
+         <div class="text">Select the type of notation </div>
+         <div class="buttons">
+            <button id = "letter" class="setbutton">Letters</button>
+            <button id = "solfege" class="setbutton">Solfège,(Fixed, Do-si)</button>
+
+         </div>
+      </div>
+
+
    <script type="text/javascript" src="script.js"></script>
 
-   
-     
-   </body>
+
+
+</body>

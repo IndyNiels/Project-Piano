@@ -185,10 +185,13 @@ let checkTest = function(event, notes = mySong) {
     butonToString = String(event.target.getAttribute('id'))
 
 
-
     if (activeNote.note.includes(butonToString)) {
-        let pushTime = storeTime()
-        activeNote.timer = pushTime
+      event.target.classList.add('animated');
+      setTimeout(()=> {
+        event.target.classList.remove('animated')
+      },1500);
+        let pushTime = storeTime();
+        activeNote.timer = pushTime;
         if(activeNote.timer < 2 ) {activeNote.timer +=100} 
         dibuja(notes);
     }
@@ -199,7 +202,6 @@ let checkTest = function(event, notes = mySong) {
 
 //Adding event listeners to Button notes.
 const flatNotes = [c,d,e,f,g,a,b]
-
 flatNotes.forEach(item => {
   item.addEventListener('click',checkTest)
 });
@@ -208,17 +210,59 @@ flatNotes.forEach(item => {
 // When pressing "Start" , check for wether there is a saved song, otherwise play default song.
 //Check if song is saved...
 
-boton.addEventListener('click', function () {
-  const retrievedSong = JSON.parse(localStorage.getItem('savedSong'));
-  if (typeof variable !== 'undefined') {
-    console.log(retrievedSong)
-    initialize(retrievedSong)
-  }
-  else {
-    initialize(mySong)
-    console.log("didnt work mate")
-    console.table(retrievedSong)
+boton.addEventListener("click", function () {
+  const retrievedSong = JSON.parse(localStorage.getItem("savedSong"));
+  if (typeof variable !== "undefined") {
+    console.log(retrievedSong);
+    initialize(retrievedSong);
+  } else {
+    initialize(mySong);
+    console.log("didnt work mate");
+    console.table(retrievedSong);
   }
 });
+
+//Function to change html text for notation.
+
+
+let menu = document.getElementsByClassName('flatNotes');
+let children = menu[0].children;
+
+console.log(children)
+
+//children[0].innerHTML = "world";
+
+
+letter = document.getElementById("letter")
+solfege = document.getElementById("solfege")
+
+console.log(letter)
+
+let changeNames = function (event) {
+  event.target.classList.toggle("active");
+  
+  const cb = ["C","D","E","F","G","A","B"]
+  
+  for (let i = 0; i<children.length; i++ ) {
+    children[i].innerHTML = cb[0]
+    cb.shift();
+  }
+}
+
+
+letter.addEventListener('click',changeNames)
+solfege.addEventListener('click',changeNames)
+
+
+
+
+
+
+
+
+
+
+
+
 
 

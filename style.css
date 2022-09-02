@@ -44,12 +44,48 @@ font-family: var(--font);
   background: var(--clr-gray100);
  font-weight: 400;
 }
+
+h1{
+  font-size: 2rem;
+  cursor:pointer;
+  line-height: 2rem;
+  color:#039d69;
+}
 nav {
   background: white;
   box-shadow: 0px 0px 10px var(--clr-gray200);
   border-radius: var(--radius);
+}
+
+#top{
+  display:grid;
+  align-items:center;
+  grid-auto-flow: column;
 
 }
+#menu{
+  display:grid;
+  grid-auto-flow: column;
+  height: 10px;
+width: fit-content;
+justify-self:end;
+gap:1rem;
+padding-right: 1rem;
+}
+
+
+
+.menu-item{
+height:10px ;
+width: auto;
+
+}
+
+.menu-item img {
+  width: auto;
+  height: 20px;
+}
+
 .container {
   max-width: 1200px; 
   margin: 0 auto; 
@@ -66,7 +102,7 @@ nav {
 .nav-list {
 display: flex;
 justify-content: space-between;
-  align-items: center;
+  align-items: left;
 
 }
 .nav-item {
@@ -92,13 +128,31 @@ justify-content: space-between;
 margin-top:20px;
 }
 
+.buttons{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-flow: row;
+  gap: .5rem;
+}
+
+.setbutton{
+  align-content: center;
+  appearance: none;
+  border-radius: .5rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  cursor:pointer;
+  background-color: #f0e9df;
+  color: #286983;
+  border: none;
+}
+
 .boton {
 width:  100%;
   height: 90px;
     border: none;
    border-radius: .5rem;
     box-sizing: border-box;
-    font-weight: 1100
     line-height: 1.25rem;
      text-decoration: none #D1D5DB solid;
     cursor: pointer;
@@ -106,15 +160,31 @@ width:  100%;
     touch-action: manipulation;
   background-color: #f0e9df;
   color: #286983;
- 
-
 }
 
 
+@keyframes example {
+  from {background-color: green;}
+  to {background-color: #f0e9df;}
+}
+
+.animated {
+  background-color: #f0e9df;
+  animation-name:example;
+  animation-duration: 1s;
+}
+/* This is a solution for hovering problem on mobile source: https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/*/
+@media (hover: hover) {
+  button:hover {
+    color:white;
+    background: #286983;
+  }
+}
+/*
 .boton:hover {
    color:white;
   background: #286983;
-}
+}*/
 .boton:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -125,16 +195,18 @@ width:  100%;
 .boton-midi {
   font-family: Montserrat, sans-serif;
   font-size: 16px;
-  background: var(--clr-primary);
+  background: #286983;
   border: none;
   outline: none;
   border-radius: var(--radius);
   padding: 0.5rem 1rem;
   cursor: pointer;
   transition: all 200ms ease-in;
+  color:white;
 }
 .boton-midi img{
   margin-right: 4px;
+background-color:white;
 }
 .boton-midi:hover {
   background: var(--clr-primary-hover);
@@ -148,14 +220,22 @@ width:  100%;
     position: relative;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     max-width: 1200px;
     margin: auto;
     background-color:white;
     border-radius: 25px;
+    height: 320.44px;
+ background-image: url(images/musicstaff.svg);
+ background-repeat: repeat-x;
+ background-position: center;
+border:solid 10px;
+border-color: white;
 }
-.staff {
-  width: 90%;
-  height: 105.45px;
+
+.active {
+  background: #286983;
+  color: white;
 }
 
 .gclef {
@@ -163,12 +243,9 @@ width:  100%;
   top: 22%;
   left: 4%;
   height: 60%; 
-
-     display: none;
+  display: none;
 }
-.staff_section {
 
-}
 
 .bass {
   position: absolute; 
@@ -188,9 +265,9 @@ width:  100%;
  width: 100px;
   height: 100px;
   display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
 }
 .line {
  
