@@ -236,10 +236,13 @@ console.log(children)
 letter = document.getElementById("letter")
 solfege = document.getElementById("solfege")
 
-console.log(letter)
+
 
 let changeNames = function (event) {
+
+event.target.parentNode.childNodes[1].classList.remove("active")
   event.target.classList.toggle("active");
+  
   
   const cb = ["C","D","E","F","G","A","B"]
   
